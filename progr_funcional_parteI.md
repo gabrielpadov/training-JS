@@ -203,3 +203,8 @@ Conteúdo baseados nestes artigos
 - [Don't Be Scared Of Functional Programming](https://www.smashingmagazine.com/2014/07/dont-be-scared-of-functional-programming/)
 - [Side-effect](https://www.quora.com/What-is-a-side-effect-in-programming)
 - [Entender prog. Funcional em JavaScript](https://medium.com/tableless/entendendo-programa%C3%A7%C3%A3o-funcional-em-javascript-de-uma-vez-c676489be08b)
+- [Destructuring](https://medium.com/@quinnlashinsky/destructuring-arrays-in-javascript-2cb003160b3a)
+- [Manipulação de numbers](https://medium.com/better-programming/the-ultimate-guide-for-manipulating-numbers-in-javascript-44c6343e94cf)
+
+Conteúdo baseados nestes videos
+- [Code this, NOT that](https://www.youtube.com/watch?v=Mus_vwhTCq0&list=WL)
