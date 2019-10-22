@@ -15,7 +15,9 @@ Conteúdo baseados nos materiais listados abaixo
 - [Manipulate strings](https://www.digitalocean.com/community/tutorials/how-to-index-split-and-manipulate-strings-in-javascript)
 - [Working with strings](https://medium.com/swlh/working-with-strings-in-javascript-34060a1c17a9)
 - [Uso do JSON.strinfigy](https://medium.com/better-programming/why-you-shouldnt-use-json-stringify-to-compare-objects-in-javascript-c9a16b7331e)
-- []()
+- [How to Trim Strings in JavaScript](https://medium.com/coding-in-simple-english/how-to-trim-strings-in-javascript-es2019-3823070c9316)
+
+- [Use Destructuring Assignment over Function Parameters](https://medium.com/swlh/javascript-use-destructuring-assignment-over-function-parameters-7d22b9f9b851)
 - [Guia em Async/Await em JS](https://itnext.io/a-beginners-guide-to-async-await-in-javascript-97750bd09ffa)
 
 ## Videos

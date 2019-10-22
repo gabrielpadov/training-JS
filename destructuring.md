@@ -2,11 +2,9 @@
 
 [Voltar](JavaScript_pro_tips.md)
 
-**Destructuring** é um novo recurso disponível no ES6 que permite atribuir
-elementos em objetos ou matrizes a variáveis ​​de maneira declarativa e rápida. 
-Podemos acessar estruturas profundamente aninhadas e até eliminar a 
-necessidade de verificação nula, capturando apenas os elementos que precisamos,
-levando a um código mais sucinto. 
+**Destructuring** é um novo recurso disponível no ES6 que permite atribuir elementos em objetos ou matrizes a variáveis ​​de maneira declarativa e rápida.
+
+Podemos acessar estruturas profundamente aninhadas e até eliminar a necessidade de verificação nula, capturando apenas os elementos que precisamos, levando a um código mais sucinto.
 
 ```javascript
   // Obtendo todos os elementos
@@ -31,7 +29,7 @@ levando a um código mais sucinto.
 
   const [first ,, third] = blackMirror // vírgulas necessárias para separar os elementos 
 
-  console.log (first) // 'black' 
+  console.log (first) // 'black'
   console.log (third) // 'tecnologia "
 
   //Spread Operator
@@ -46,7 +44,7 @@ levando a um código mais sucinto.
   const blackMirror = ['black', 'mirror', 'technology', 'bad']
   
   const cereal = {
-    frosties: blackMirror 
+    frosties: blackMirror
   }
   
   const [first] = cereal.frosties
@@ -62,6 +60,5 @@ levando a um código mais sucinto.
   
   console.log(third) // 'technology'
 ```
-- **Array Destructing** pode ajudá-lo a escrever um código conciso e mais eficaz,
-evitando a necessidade de declarar variáveis ​​extras e destruindo apenas os dados
- necessários para criar seu aplicativo.
+
+- **Array Destructing** pode ajudá-lo a escrever um código conciso e mais eficaz, evitando a necessidade de declarar variáveis ​​extras e destruindo apenas os dados necessários para criar seu aplicativo.
