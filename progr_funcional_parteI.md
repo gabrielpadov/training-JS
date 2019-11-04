@@ -48,21 +48,68 @@ Etapas
 Abstrações são necessárias para entendermos como utilizar funções. Em programação, seria a implementação de uma função para um determinado bloco de código a ser utilizado e reutilizado.
 
 ```javascript
-const isRunning = status => status === 'RUNNING'
-const isEnded = status => status === 'ENDED'
+const isRunning = status => status === "RUNNING";
+const isEnded = status => status === "ENDED";
 
-const myFunction = (data) => {
+const myFunction = data => {
   if (isRunning(data.status)) {
     // do something
   }
   if (isEnded(data.status)) {
     // do something
   }
-  return // fallback
-}
+  return; // fallback
+};
 ```
 
 No exemplo, a estrutura condicional **if** é abstraída e assim, a **myFunction** ao receber o parametro **data** têm o comportamento previsível de executar as comparações dentro do seu escopo.
+
+## Característica importante do Javascript
+
+> Funções são objetos.
+
+Os objetos têm propriedades que consistem em pares de valor-chave.
+
+Assim, matrizes ou arrays (JavaScript objects) têm uma propriedade `prototype` à qual métodos exclusivos podem ser anexados: por exemplo, `Array.prototype.filter()`, as funções também possuem uma propriedade `prototype`.
+
+Entre as propriedades de `Function.prototype` estão as propriedades únicas que fornecem o código da função que pode ser chamado, mas o código executável não é a única propriedade de uma função.
+
+O `Function.prototype` possui propriedades próprias como o `.name` que contém o nome da função e `.length` que contém o número de argumentos esperados pela função. Os métodos `.apply`, `.bind` e `.call` também são da propriedade do `Function.prototype`.
+
+O JavaScript pode ser descrito como uma linguagem funcional, isso significa que os programas são criados por meio de funções. As funções são consideradas de primeira classe, o que significa que as funções podem fazer praticamente qualquer coisa: serem passadas como argumentos para outras funções, inseridas em estruturas de dados, atribuídas a variáveis ​​e retornadas por outras funções.
+
+```javascript
+// Atribuímos uma função a uma variável chamada myFunction:
+var myFunction = função (str) {console.log (str)}
+
+// Acessar a propriedade 'name' da função como em qualquer objeto:
+myFunction ["name"]
+myFunction.name // ambos retornam "myFunction"
+
+// Acessar a propriedade da função 'length' que retorna o número de argumentos que a função recebe
+myFunction ["length"]
+myFunction.length // ambos retornam 1,porque myFunction usa um argumento, str
+
+// Atribuir novas propriedades a uma função
+myFunction.myNewProperty = "olá"
+myFunction.myNewProperty // retorna "olá"
+```
+
+Podemos fazer praticamente qualquer coisa funções em Javascript, incluindo a atribuição de outras funções como propriedades das funções.
+
+```javascript
+var coolFunc = function() {
+  return 1;
+};
+
+myFunction.coolProperty = coolFunc;
+
+myFunction.coolProperty; // retorna a função () {return 1}
+
+myFunction.coolProperty(); // retorna 1
+```
+
+As funções são apenas objetos JavaScript e, a seguir, qualquer coisa que você possa fazer com um objeto em JavaScript, você pode fazer com uma função. A única diferença real com as funções é que elas, juntamente com outros objetos em JavaScript, têm seus próprios métodos e propriedades exclusivos, um dos quais é um método que mantém o código executável na função e outro que chama esse código executável.
 
 ## Funções
 
@@ -75,15 +122,15 @@ Observe:
 ```javascript
 // Primeiro caso
 function square(x) {
-    return x * x;
+  return x * x;
 }
 
 square(2); // result: 4
 
 //Segundo caso
 function generateDate() {
-    var date = new Date();
-    generate(date);
+  var date = new Date();
+  generate(date);
 }
 
 generateDate(); // ?
@@ -98,24 +145,24 @@ generateDate(); // ?
 > Se uma função mudar algum outro estado externo à função, é dito que ela causou um efeito colateral.
 
 ```c
-int glob = 0; 
+int glob = 0;
 int quadrado ( int x )
 {
-  glob = 1 ; 
+  glob = 1 ;
   retornar x * x ;
 }
 
 int main () // Prog. principal
 {
   int res ;
-  glob = 0 ; 
+  glob = 0 ;
   res = quadrado ( 5 );
   res += glob ;
   return res ;
 }
 ```
 
-Se observamos somente o programa principal, a priori o retorno do valor **res** seria 25. Porém, o programa retorna o valor 26. Durante a chamada da função **quadrado**, a variável global **global** é modificada e o valor de retorno é 25. Temos um chamado efeito colateral ***(side-effects)***.
+Se observamos somente o programa principal, a priori o retorno do valor **res** seria 25. Porém, o programa retorna o valor 26. Durante a chamada da função **quadrado**, a variável global **global** é modificada e o valor de retorno é 25. Temos um chamado efeito colateral **_(side-effects)_**.
 
 Funções que possuem inputs e outputs ocultos e podem gerar side-effects são chamadas de Funções Impuras (impure functions). Característica importante: se invocarmos uma função impura diversas vezes, o retorno dela provavelmente não será o mesmo. O que dificulta a manutenção e os testes de uma aplicação.
 
@@ -127,19 +174,19 @@ Considera-se má prática de programação escrever programas que dependam de ef
 
 Se uma função tem inputs e outputs declarados e não geram side-effects, o retorno de uma função pura dado um parâmetro será sempre o mesmo.
 
-Em programação funcional uma função pura sempre deve retornar um valor, devido a possibilidade do *Encadeamento de operações*: ***fn1(fn2(fn3(value)))***.
+Em programação funcional uma função pura sempre deve retornar um valor, devido a possibilidade do _Encadeamento de operações_: **_fn1(fn2(fn3(value)))_**.
 
 ```javascript
-import localforage from 'localforage'
+import localforage from "localforage";
 
-const storeValue = value => localforage.setItem('myValue', value)
+const storeValue = value => localforage.setItem("myValue", value);
 
-const sumForTwo = number => number + 2
-const doubleMe = number => number * 2
+const sumForTwo = number => number + 2;
+const doubleMe = number => number * 2;
 
-const result = storeValue(sumForTwo(doubleMe(3)))
+const result = storeValue(sumForTwo(doubleMe(3)));
 
-result.then(console.log) // result: 8
+result.then(console.log); // result: 8
 ```
 
 ### Funções de primeira classe - First Class Functions
@@ -149,7 +196,7 @@ result.then(console.log) // result: 8
 Significa que funções podem ser usadas como valores, sendo passadas como parâmetros e recebidas como resultados.
 
 ```javascript
-const { head } = require('lodash')
+const { head } = require("lodash");
 
 /**
  * Insert query
@@ -159,9 +206,13 @@ const { head } = require('lodash')
  * @param  {Object} obj object for insert
  * @return {Promise}
  */
-const insertQuery = (db, database, fields, obj) => db(database).returning(fields).insert(obj).then(head)
+const insertQuery = (db, database, fields, obj) =>
+  db(database)
+    .returning(fields)
+    .insert(obj)
+    .then(head);
 
-module.exports = insertQuery
+module.exports = insertQuery;
 ```
 
 ### Funções de primeira ordem — High Order Functions
@@ -173,16 +224,16 @@ Permitem fazer abstrações não apenas de valores mas também de ações. Noexe
 ```javascript
 // Exemplo
 var calculate = function(fn, x, y) {
-    return fn(x, y);
+  return fn(x, y);
 };
 
 // ES5
 var sum = function(x, y) {
-    return x + y;
+  return x + y;
 };
 
 var mult = function(x, y) {
-    return x * y;
+  return x * y;
 };
 
 calculate(sum, 2, 5); // 7
@@ -196,13 +247,13 @@ calculate(sum, 2, 5); // 7
 calculate(mult, 2, 5); // 10
 ```
 
-*Higher-order functions* estão em todos os lugares no ecossistema do JavaScript.
+_Higher-order functions_ estão em todos os lugares no ecossistema do JavaScript.
 
 [Continuação](prog_funcional_parteII.md)
 
 ### Vida real
 
- Muitas empresas tem optado por usar linguagens não bloqueantes, como por exemplo Node.js em seus projetos. Outras tem usados linguagens multi thread para lidar com a grande carga de processamento dos seus dados. As linguagens funcionais tendem a ser mais inteligíveis quando o assunto é programação paralela, e um dos motivos é exatamente a imutabilidade. Códigos previsíveis e sem efeitos colaterais ajudam a desenvolver de forma que múltiplos módulos de um sistema executem em múltiplos processadores.
+Muitas empresas tem optado por usar linguagens não bloqueantes, como por exemplo Node.js em seus projetos. Outras tem usados linguagens multi thread para lidar com a grande carga de processamento dos seus dados. As linguagens funcionais tendem a ser mais inteligíveis quando o assunto é programação paralela, e um dos motivos é exatamente a imutabilidade. Códigos previsíveis e sem efeitos colaterais ajudam a desenvolver de forma que múltiplos módulos de um sistema executem em múltiplos processadores.
 
 ### Pontos importantes
 

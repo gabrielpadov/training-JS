@@ -16,7 +16,7 @@ Conteúdo baseados nos materiais listados abaixo
 - [Working with strings](https://medium.com/swlh/working-with-strings-in-javascript-34060a1c17a9)
 - [Uso do JSON.strinfigy](https://medium.com/better-programming/why-you-shouldnt-use-json-stringify-to-compare-objects-in-javascript-c9a16b7331e)
 - [How to Trim Strings in JavaScript](https://medium.com/coding-in-simple-english/how-to-trim-strings-in-javascript-es2019-3823070c9316)
-- [map(), filter(), reducer()](https://desenvolvimentoparaweb.com/javascript/map-filter-reduce-javascript/)
+- [map(), filter(), reducer()](https://desenvolvimentoparaweb.com/javascript/map-filter-reduce-javascript/) -[Funções são objetos](https://medium.com/better-programming/the-single-most-important-feature-of-javascript-d65ae448eb19)
 
 - [Use Destructuring Assignment over Function Parameters](https://medium.com/swlh/javascript-use-destructuring-assignment-over-function-parameters-7d22b9f9b851)
 - [Guia em Async/Await em JS](https://itnext.io/a-beginners-guide-to-async-await-in-javascript-97750bd09ffa)
