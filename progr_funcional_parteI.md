@@ -95,7 +95,7 @@ myFunction.myNewProperty = "olá"
 myFunction.myNewProperty // retorna "olá"
 ```
 
-Podemos fazer praticamente qualquer coisa funções em Javascript, incluindo a atribuição de outras funções como propriedades das funções.
+Praticamente, podemos fazer qualquer coisa funções em Javascript, incluindo a atribuição de outras funções como propriedades das funções.
 
 ```javascript
 var coolFunc = function() {
